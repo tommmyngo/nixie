@@ -34,6 +34,21 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -46,7 +61,9 @@
     home-manager,
     nixpkgs,
     disko,
-    spicetify-nix,
+    stylix,
+    hyprland,
+    ags,
   } @ inputs: let
     user = "nommy";
     linuxSystems = ["x86_64-linux" "aarch64-linux"];
@@ -131,6 +148,8 @@
         specialArgs = inputs;
         modules = [
           disko.nixosModules.disko
+          stylix.nixosModules.stylix
+          hyprland.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager = {

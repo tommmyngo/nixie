@@ -1,33 +1,11 @@
 {pkgs, ...}: let
   user = "nommy";
   keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p"];
-  where-is-my-sddm-theme = pkgs.where-is-my-sddm-theme.override {
-    themeConfig = {
-      General = {
-        passwordCharacter = "";
-        passwordMask = true;
-        passwordInputWidth = 0.5;
-        passwordInputBackground = "#110f0f";
-        passwordInputRadius = 24;
-        passwordInputCursorVisible = true;
-        passwordFontSize = 100;
-
-        showSessionsByDefault = true;
-        sessionsFontSize = 36;
-
-        showUsersByDefault = true;
-        usersFontSize = 48;
-
-        basicTextColor = "#E3E6EE";
-
-        font = "GeistMono Nerd Font";
-      };
-    };
-    variants = ["qt5"];
-  };
+  where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
 in {
   imports = [
     ../../modules/nixos/disk-config.nix
+    ../../modules/nixos/system
     ../../modules/shared
   ];
 
@@ -42,9 +20,9 @@ in {
     };
     initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
     # Uncomment for AMD GPU
-    initrd.kernelModules = ["amdgpu"];
+    # initrd.kernelModules = ["amdgpu"];
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["uinput"];
+    kernelModules = ["uinput" "kvm-amd"];
   };
 
   # Set your time zone.
@@ -55,7 +33,8 @@ in {
   # replicates the default behaviour.
   networking = {
     hostName = "%HOST%"; # Define your hostname.
-    useDHCP = false;
+    # useDHCP = false;
+    useDHCP = true;
     interfaces."%INTERFACE%".useDHCP = true;
     networkmanager.enable = true;
   };

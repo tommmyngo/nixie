@@ -67,9 +67,6 @@ in {
         ShowStatusBar = true;
         ShowPathbar = true;
       };
-
-      trackpad = {
-      };
     };
   };
 }

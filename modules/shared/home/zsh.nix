@@ -29,10 +29,10 @@
       gl = "git log --oneline";
       gaa = "git add .";
       gcm = "git commit -m";
-      gcma = "gaa ; gcm";
       gps = "git push";
       gpl = "git pull";
       gmm = "git merge main";
+      gcma = "gaa ; gcm";
       gchm = "gch main ; gpl";
       gchb = "gch -b";
       gcpa = "f() {gaa ; gcm $1 ; gps};f";

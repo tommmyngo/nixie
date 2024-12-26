@@ -1,0 +1,29 @@
+@use "./utils.scss" as *;
+@use "./vars.scss" as *;
+@use "sass:color";
+
+button {
+  transition-duration: 0.2s;
+  &:hover:not(.btn-enabled) {
+    background-color: color.scale($accent, $lightness: -30%);
+  }
+  &:active:not(.btn-enabled) {
+    background-color: color.scale($accent, $lightness: -10%);
+  }
+
+  &.btn {
+    background-color: $primary;
+    color: $fg;
+  }
+  &.btn-enabled {
+    color: $primary;
+  }
+  &.btn-secondary {
+    background-color: $accent;
+    color: $fg;
+  }
+  &.btn-ghost {
+    background-color: transparent;
+    color: $fg;
+  }
+}

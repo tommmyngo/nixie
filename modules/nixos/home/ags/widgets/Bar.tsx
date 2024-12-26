@@ -1,0 +1,34 @@
+import { App, Astal, Gtk } from "astal/gtk3";
+
+import Time from "../widgets/Time";
+import Workspaces from "../widgets/Workspaces";
+import Wifi from "../widgets/Wifi";
+
+export function Bar() {
+  return (
+    <window
+      name="bar"
+      application={App}
+      monitor={0}
+      exclusivity={Astal.Exclusivity.EXCLUSIVE}
+      anchor={
+        Astal.WindowAnchor.TOP |
+        Astal.WindowAnchor.LEFT |
+        Astal.WindowAnchor.RIGHT
+      }
+      visible={true}
+    >
+      <centerbox>
+        <box halign={Gtk.Align.START}>
+          <Workspaces />
+        </box>
+        <box></box>
+        <box halign={Gtk.Align.END}>
+          <Wifi />
+          -
+          <Time format="%a %I:%M %p" />
+        </box>
+      </centerbox>
+    </window>
+  );
+}

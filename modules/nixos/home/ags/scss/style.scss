@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "./window.scss";
+@use "./button.scss";
+@use "./utils.scss";
+@use "./vars.scss" as *;
+
+* {
+  all: unset;
+  font-size: $fontSize;
+  min-width: $fontSize;
+}
+
+.icon {
+  padding-right: map.get($spacing, 2);
+}
+
+.workspaces {
+  margin-left: 8px;
+}

@@ -7,6 +7,9 @@
   user = "nommy";
   shared-programs = import ../shared/home-manager.nix {inherit config pkgs lib;};
 in {
+  imports = [
+    ./home
+  ];
   home = {
     enableNixpkgsReleaseCheck = false;
     username = "${user}";
@@ -20,5 +23,6 @@ in {
     udiskie.enable = true;
   };
 
-  programs = shared-programs // {};
+  wayland.windowManager.hyprland.enable = true;
+  programs = shared-programs;
 }
