@@ -63,7 +63,6 @@
     disko,
     stylix,
     hyprland,
-    ags,
   } @ inputs: let
     user = "nommy";
     linuxSystems = ["x86_64-linux" "aarch64-linux"];
