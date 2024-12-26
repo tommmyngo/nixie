@@ -1,5 +1,12 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  lib,
+  inputs,
+  ...
+}: let
   user = "nommy";
+  shared-home-programs = import ../shared/home-manager.nix {inherit config pkgs lib inputs;};
 in {
   imports = [
     ./dock.nix
@@ -35,19 +42,13 @@ in {
 
   # Enable home-manager
   home-manager = {
-    users.${user} = {
-      pkgs,
-      config,
-      lib,
-      inputs,
-      ...
-    }: {
+    users.${user} = {pkgs, ...}: {
       home = {
         enableNixpkgsReleaseCheck = false;
         packages = import ./packages.nix {inherit pkgs;};
         stateVersion = "24.11";
       };
-      programs = {} // import ../shared/home-manager.nix {inherit config pkgs lib inputs;};
+      programs = shared-home-programs;
 
       # Marked broken Oct 20, 2022 check later to remove this
       # https://github.com/nix-community/home-manager/issues/3344

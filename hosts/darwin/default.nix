@@ -45,8 +45,7 @@ in {
     defaults = {
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
-        # ApplePressAndHoldEnabled = false;
-
+        AppleInterfaceStyle = "Dark";
         KeyRepeat = 2; # Values: 120, 90, 60, 30, 12, 6, 2
         InitialKeyRepeat = 15; # Values: 120, 94, 68, 35, 25, 15
 
@@ -66,6 +65,13 @@ in {
         _FXShowPosixPathInTitle = false;
         ShowStatusBar = true;
         ShowPathbar = true;
+      };
+
+      WindowManager = {
+        EnableStandardClickToShowDesktop = false;
+        StageManagerHideWidgets = true;
+        StandardHideDesktopIcons = true;
+        StandardHideWidgets = true;
       };
     };
   };
