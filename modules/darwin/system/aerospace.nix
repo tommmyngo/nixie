@@ -2,6 +2,12 @@
   services.aerospace = {
     enable = true;
     settings = {
+      enable-normalization-flatten-containers = false;
+      enable-normalization-opposite-orientation-for-nested-containers = false;
+      on-focus-changed = [
+        "move-mouse window-lazy-center"
+      ];
+
       gaps = {
         inner.horizontal = 6;
         inner.vertical = 6;
@@ -10,9 +16,21 @@
         outer.top = 2;
         outer.right = 4;
       };
+      # All possible keys:
+      # - Letters.        a, b, c, ..., z
+      # - Numbers.        0, 1, 2, ..., 9
+      # - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+      # - F-keys.         f1, f2, ..., f20
+      # - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
+      #                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
+      # - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+      #                   keypadMinus, keypadMultiply, keypadPlus
+      # - Arrows.         left, down, up, right
+
+      # All possible modifiers: cmd, alt, ctrl, shift
       mode.main.binding = {
         # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-        alt-slash = "layout tiles horizontal vertical";
+        alt-space = "layout tiling floating";
 
         # Moving windows within layout - Vim
         alt-h = "focus left";
