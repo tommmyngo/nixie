@@ -10,6 +10,8 @@
 in {
   imports = [
     ./dock.nix
+    ./home
+    ./system
   ];
 
   users.users.${user} = {
@@ -21,7 +23,7 @@ in {
 
   homebrew = {
     enable = true;
-    casks = import ./casks.nix;
+    casks = import ./casks.nix {};
     # onActivation.cleanup = "uninstall";
 
     # These app IDs are from using the mas CLI app

@@ -24,6 +24,8 @@
       gruntfuggly.todo-tree
       bradgashler.htmltagwrap
       jock.svg
+      ms-python.black-formatter
+      # stivo.tailwind-fold
       # fractalbrew.backticks
       # mrmlnc.vscode-scss
       # ms-vscode.vscode-typescript-next

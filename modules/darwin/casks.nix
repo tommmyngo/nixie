@@ -1,6 +1,5 @@
-[
-  "discord"
-  "zoom"
-  "raycast"
+_: [
   "google-chrome"
+  "raycast"
+  "discord"
 ]
