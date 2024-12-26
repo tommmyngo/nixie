@@ -3,4 +3,4 @@
   inputs,
   ...
 }:
-import ./config {inherit pkgs inputs;}
+import ./home {inherit pkgs inputs;}
