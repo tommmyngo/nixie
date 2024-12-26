@@ -1,6 +1,7 @@
 system: "base16"
 scheme: "Neo-Horizon"
 slug: "Neo-Horizon"
+description: "Color pallete based on Horizon"
 author: "Tommy Ngo (https://github.com/tommmyngo)"
 variant: "dark"
 base00: "#0b0c0f"
