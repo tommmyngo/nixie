@@ -32,10 +32,7 @@ in {
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking = {
-    hostName = "%HOST%"; # Define your hostname.
-    # useDHCP = false;
-    useDHCP = true;
-    interfaces."%INTERFACE%".useDHCP = true;
+    hostName = "hako"; # Define your hostname.
     networkmanager.enable = true;
   };
 
@@ -64,7 +61,6 @@ in {
 
   # Manages keys and such
   programs = {
-    gnupg.agent.enable = true;
     zsh.enable = true;
     nh.enable = true;
     hyprland.enable = true;
@@ -157,6 +153,7 @@ in {
     ${user} = {
       isNormalUser = true;
       extraGroups = [
+        "networkmanager"
         "wheel" # Enable ‘sudo’ for the user.
         "docker"
       ];
@@ -177,8 +174,12 @@ in {
     extraRules = [
       {
         commands = [
+          # {
+          #   command = "${pkgs.systemd}/bin/reboot";
+          #   options = ["NOPASSWD"];
+          # }
           {
-            command = "${pkgs.systemd}/bin/reboot";
+            command = "ALL";
             options = ["NOPASSWD"];
           }
         ];
