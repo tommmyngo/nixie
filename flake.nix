@@ -41,6 +41,14 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -55,6 +63,8 @@
     disko,
     stylix,
     hyprland,
+    spicetify-nix,
+    ags,
   } @ inputs: let
     user = "nommy";
     linuxSystems = ["x86_64-linux" "aarch64-linux"];
