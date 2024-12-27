@@ -38,7 +38,7 @@ in {
 
   # Turn on flag for proprietary software
   nix = {
-    nixPath = ["nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos"];
+    nixPath = ["nixie=/home/${user}/.local/share/src/nixie:/etc/nixos:/home/nommy/nixie"];
     settings = {
       auto-optimise-store = true;
       allowed-users = ["${user}"];
