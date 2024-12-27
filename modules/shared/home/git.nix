@@ -12,12 +12,6 @@ in {
     };
     extraConfig = {
       init.defaultBranch = "main";
-      core = {
-        editor = "vim";
-        autocrlf = "input";
-      };
-      pull.rebase = true;
-      rebase.autoStash = true;
       push.autoSetupRemote = true;
     };
   };
