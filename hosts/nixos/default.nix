@@ -69,12 +69,12 @@ in {
       #   extraPackages = [where-is-my-sddm-theme];
       #   theme = "where_is_my_sddm_theme_qt5";
       # };
-      lightdm = {
+    };
+    xserver = {
+      displayManager.lightdm = {
         enable = true;
         greeters.slick.enable = true;
       };
-    };
-    xserver = {
       xkb = {
         layout = "us";
       };
