@@ -90,7 +90,7 @@ in {
   };
   security.rtkit.enable = true;
   hardware = {
-    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    # cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     pulseaudio.enable = false;
 
     # Video support
@@ -136,7 +136,7 @@ in {
   ];
 
   environment.sessionVariables = {
-    FLAKE = "/home/nommy/nixes";
+    # FLAKE = "/home/nommy/nixes";
     BAR_PATH = "$FLAKE/home-manager/$HOST/config/ags";
     WALL_PATH = "$FLAKE/walls/sushi.jpg";
 
