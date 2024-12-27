@@ -27,7 +27,7 @@ in {
     # Uncomment for AMD GPU
     # initrd.kernelModules = ["amdgpu"];
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["uinput" "kvm-amd"];
+    kernelModules = ["kvm-amd"];
   };
 
   fileSystems."/" = {
@@ -105,19 +105,12 @@ in {
       };
     };
     xserver = {
-      enable = true;
-
-      layout = "us";
       xkb = {
         layout = "us";
       };
-      xkbOptions = "ctrl:nocaps";
-
-      # Better support for general peripherals
-      libinput.enable = true;
     };
 
-    printing.enable = true;
+    # printing.enable = true;
 
     # Audio
     pipewire = {
@@ -175,6 +168,7 @@ in {
   environment.systemPackages = [
     where-is-my-sddm-theme
   ];
+
   environment.sessionVariables = {
     FLAKE = "/home/nommy/nixes";
     BAR_PATH = "$FLAKE/home-manager/$HOST/config/ags";
