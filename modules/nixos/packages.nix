@@ -4,5 +4,8 @@ with pkgs; let
 in
   shared-packages
   ++ [
+    dart-sass
+    rofimoji
     swww
+    google-chrome
   ]

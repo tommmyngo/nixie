@@ -2,11 +2,13 @@
   description = "Nix configuration for MacOS and NixOS";
 
   inputs = {
+    #Shared Flakes
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    #MacOS Flakes
     darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +28,7 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    #NixOS Flakes
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";

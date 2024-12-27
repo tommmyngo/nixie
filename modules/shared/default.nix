@@ -2,9 +2,9 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      # allowBroken = true;
-      # allowInsecure = false;
-      # allowUnsupportedSystem = true;
+      allowBroken = true;
+      allowInsecure = false;
+      allowUnsupportedSystem = true;
     };
   };
   fonts.packages = with pkgs; [

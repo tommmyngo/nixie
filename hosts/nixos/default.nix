@@ -1,11 +1,9 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }: let
   user = "nommy";
-  # keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p"];
   where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
 in {
   imports = [
@@ -36,7 +34,7 @@ in {
   };
 
   nix = {
-    # nixPath = ["nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos:/home/nommy/nixie"];
+    nixPath = ["nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos:/home/nommy/nixie"];
     settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
@@ -72,10 +70,6 @@ in {
     };
     xserver = {
       enable = true;
-      # displayManager.lightdm = {
-      #   enable = true;
-      #   greeters.slick.enable = true;
-      # };
       xkb = {
         layout = "us";
       };
@@ -89,17 +83,12 @@ in {
       jack.enable = true;
     };
   };
-  security.rtkit.enable = true;
   hardware = {
-    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     pulseaudio.enable = false;
-
-    # Video support
-    # opengl = {
-    #   enable = true;
-    #   driSupport32Bit = true;
-    #   driSupport = true;
-    # };
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
 
   # It's me, it's you, it's everyone
@@ -116,6 +105,7 @@ in {
 
   users.defaultUserShell = pkgs.zsh;
 
+  security.rtkit.enable = true;
   # Don't require password for users in `wheel` group for these commands
   security.sudo = {
     enable = true;
@@ -137,8 +127,8 @@ in {
   ];
 
   environment.sessionVariables = {
-    # FLAKE = "/home/nommy/nixes";
-    BAR_PATH = "$FLAKE/home-manager/$HOST/config/ags";
+    FLAKE = "/home/nommy/nixie";
+    BAR_PATH = "$FLAKE/modules/nixos/home/ags";
     WALL_PATH = "$FLAKE/walls/sushi.jpg";
 
     XDG_CURRENT_DESKTOP = "Hyprland";

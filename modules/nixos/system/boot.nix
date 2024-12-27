@@ -1,12 +1,13 @@
 {
   pkgs,
   modulesPath,
+  lib,
+  config,
   ...
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
-  # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
       systemd-boot = {
@@ -18,7 +19,8 @@
     initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
     initrd.kernelModules = [];
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["kvm-amd"];
+    kernelModules = ["kvm-amd" "uinput"];
     extraModulePackages = [];
   };
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
