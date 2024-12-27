@@ -19,7 +19,7 @@ in {
 
   services = {
     # Auto mount devices
-    udiskie.enable = true;
+    # udiskie.enable = true;
   };
 
   wayland.windowManager.hyprland.enable = true;

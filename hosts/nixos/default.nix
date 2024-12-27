@@ -9,38 +9,9 @@
   where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
 in {
   imports = [
-    # ../../modules/nixos/disk-config.nix
+    ../../modules/nixos/disk-config.nix
     ../../modules/nixos/system
     ../../modules/shared
-  ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot = {
-    loader = {
-      systemd-boot = {
-        enable = true;
-        configurationLimit = 42;
-      };
-      efi.canTouchEfiVariables = true;
-    };
-    initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
-    # Uncomment for AMD GPU
-    # initrd.kernelModules = ["amdgpu"];
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["kvm-amd"];
-  };
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/947f0c5c-5524-4a00-b62b-e52bfbe4485d";
-    fsType = "ext4";
-  };
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/0CE6-E0AC";
-    fsType = "vfat";
-    options = ["fmask=0077" "dmask=0077"];
-  };
-  swapDevices = [
-    {device = "/dev/disk/by-uuid/27f7d214-f08c-4d84-b064-2b01bd89cb29";}
   ];
 
   time.timeZone = "America/Chicago";
@@ -60,15 +31,12 @@ in {
   networking = {
     hostName = "hako";
     networkmanager.enable = true;
-    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-    # Per-interface useDHCP will be mandatory in the future, so this generated config
-    # replicates the default behaviour. TODO
     useDHCP = lib.mkDefault true;
+    # interfaces."%INTERFACE%".useDHCP = true;
   };
 
-  # Turn on flag for proprietary software
   nix = {
-    nixPath = ["nixie=/home/${user}/.local/share/src/nixie:/etc/nixos:/home/nommy/nixie"];
+    nixPath = ["nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos:/home/nommy/nixie"];
     settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
