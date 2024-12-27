@@ -157,7 +157,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.${user} = import ./modules/nixos/home-manager.nix;
-              home-manager.extraSpecialArgs = specialArgs;
+              extraSpecialArgs = specialArgs;
             };
           }
           ./hosts/nixos
