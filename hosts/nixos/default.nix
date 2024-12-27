@@ -31,12 +31,12 @@ in {
   networking = {
     hostName = "hako";
     networkmanager.enable = true;
-    useDHCP = lib.mkDefault true;
-    # interfaces."%INTERFACE%".useDHCP = true;
+    useDHCP = lib.mkDefault false;
+    interfaces."%INTERFACE%".useDHCP = true;
   };
 
   nix = {
-    nixPath = ["nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos:/home/nommy/nixie"];
+    # nixPath = ["nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos:/home/nommy/nixie"];
     settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
@@ -63,19 +63,19 @@ in {
     getty.autologinUser = "nommy";
     displayManager = {
       defaultSession = "hyprland";
-      # sddm = {
-      #   enable = true;
-      #   wayland.enable = true;
-      #   extraPackages = [where-is-my-sddm-theme];
-      #   theme = "where_is_my_sddm_theme_qt5";
-      # };
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+        extraPackages = [where-is-my-sddm-theme];
+        theme = "where_is_my_sddm_theme_qt5";
+      };
     };
     xserver = {
       enable = true;
-      displayManager.lightdm = {
-        enable = true;
-        greeters.slick.enable = true;
-      };
+      # displayManager.lightdm = {
+      #   enable = true;
+      #   greeters.slick.enable = true;
+      # };
       xkb = {
         layout = "us";
       };
