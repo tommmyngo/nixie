@@ -1,11 +1,10 @@
 {
-  config,
   pkgs,
-  lib,
+  inputs,
   ...
 }: let
   user = "nommy";
-  shared-programs = import ../shared/home-manager.nix {inherit config pkgs lib;};
+  shared-programs = import ../shared/home-manager.nix {inherit inputs pkgs;};
 in {
   imports = [
     ./home
