@@ -6,7 +6,7 @@
 }: let
   user = "nommy";
   # keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p"];
-  # where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
+  where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
 in {
   imports = [
     ../../modules/nixos/disk-config.nix
@@ -133,7 +133,7 @@ in {
   };
 
   environment.systemPackages = [
-    # where-is-my-sddm-theme
+    where-is-my-sddm-theme
   ];
 
   environment.sessionVariables = {
