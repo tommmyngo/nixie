@@ -1,10 +1,10 @@
 {
-  ags,
+  inputs,
   pkgs,
   ...
 }: {
   imports = [
-    ags.homeManagerModules.default
+    inputs.ags.homeManagerModules.default
   ];
 
   programs.ags = {
@@ -15,7 +15,7 @@
     extraPackages =
       [
       ]
-      ++ (with ags.packages.${pkgs.system}; [
+      ++ (with inputs.ags.packages.${pkgs.system}; [
         hyprland
         powerprofiles
         network

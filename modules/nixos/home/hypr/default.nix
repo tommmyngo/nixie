@@ -1,6 +1,6 @@
-{hyprland, ...}: {
+{inputs, ...}: {
   imports = [
-    hyprland.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
 
     ./animations.nix
     ./cursor.nix
