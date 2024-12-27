@@ -18,11 +18,11 @@ export function Bar() {
       }
       visible={true}
     >
-      <centerbox>
-        <box halign={Gtk.Align.START}>
+      <centerbox className="bar">
+        <box halign={Gtk.Align.START}></box>
+        <box>
           <Workspaces />
         </box>
-        <box></box>
         <box halign={Gtk.Align.END}>
           <Wifi />
           -
