@@ -34,14 +34,13 @@ in {
   };
 
   nix = {
-    nixPath = ["nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos:/home/nommy/nixie"];
     settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
       allowed-users = ["${user}"];
       trusted-users = ["@admin" "${user}"];
-      substituters = ["https://nix-community.cachix.org" "https://cache.nixos.org"];
-      trusted-public-keys = ["cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="];
+      substituters = ["https://nix-community.cachix.org" "https://cache.nixos.org" "https://hyprland.cachix.org"];
+      trusted-public-keys = ["cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
     optimise.automatic = true;
     gc = {
@@ -87,13 +86,12 @@ in {
     pulseaudio.enable = false;
   };
 
-  # It's me, it's you, it's everyone
   users.users = {
     ${user} = {
       isNormalUser = true;
       extraGroups = [
         "networkmanager"
-        "wheel" # Enable ‘sudo’ for the user.
+        "wheel"
       ];
       shell = pkgs.zsh;
     };
