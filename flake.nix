@@ -146,7 +146,7 @@
     nixosConfigurations = nixpkgs.lib.genAttrs linuxSystems (system:
       nixpkgs.lib.nixosSystem rec {
         inherit system;
-        specialArgs = inputs;
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nixos
           stylix.nixosModules.stylix
