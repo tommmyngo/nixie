@@ -85,10 +85,6 @@ in {
   };
   hardware = {
     pulseaudio.enable = false;
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
   };
 
   # It's me, it's you, it's everyone
