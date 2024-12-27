@@ -74,7 +74,7 @@ cleanup
 check_installer
 download_config
 run_apply
-run_disko
+# run_disko
 setup_files
 install_nixos
 cleanup

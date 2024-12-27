@@ -26,10 +26,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # disko = {
+    #   url = "github:nix-community/disko";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     stylix = {
       url = "github:danth/stylix";
       inputs = {
@@ -60,11 +60,9 @@
     homebrew-cask,
     home-manager,
     nixpkgs,
-    disko,
+    # disko,
     stylix,
     hyprland,
-    spicetify-nix,
-    ags,
   } @ inputs: let
     user = "nommy";
     linuxSystems = ["x86_64-linux" "aarch64-linux"];
@@ -148,7 +146,7 @@
         inherit system;
         specialArgs = inputs;
         modules = [
-          disko.nixosModules.disko
+          ./hosts/nixos
           stylix.nixosModules.stylix
           hyprland.nixosModules.default
           home-manager.nixosModules.home-manager
@@ -160,7 +158,6 @@
               extraSpecialArgs = specialArgs;
             };
           }
-          ./hosts/nixos
         ];
       });
   };

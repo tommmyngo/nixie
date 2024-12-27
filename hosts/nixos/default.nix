@@ -1,10 +1,15 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   user = "nommy";
   keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p"];
   where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
 in {
   imports = [
-    ../../modules/nixos/disk-config.nix
+    # ../../modules/nixos/disk-config.nix
     ../../modules/nixos/system
     ../../modules/shared
   ];
@@ -25,15 +30,40 @@ in {
     kernelModules = ["uinput" "kvm-amd"];
   };
 
-  # Set your time zone.
-  time.timeZone = "America/Chicago";
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/947f0c5c-5524-4a00-b62b-e52bfbe4485d";
+    fsType = "ext4";
+  };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/0CE6-E0AC";
+    fsType = "vfat";
+    options = ["fmask=0077" "dmask=0077"];
+  };
+  swapDevices = [
+    {device = "/dev/disk/by-uuid/27f7d214-f08c-4d84-b064-2b01bd89cb29";}
+  ];
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
+  time.timeZone = "America/Chicago";
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
   networking = {
-    hostName = "hako"; # Define your hostname.
+    hostName = "hako";
     networkmanager.enable = true;
+    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+    # Per-interface useDHCP will be mandatory in the future, so this generated config
+    # replicates the default behaviour. TODO
+    useDHCP = lib.mkDefault true;
   };
 
   # Turn on flag for proprietary software
@@ -52,14 +82,11 @@ in {
       dates = "weekly";
       options = "--delete-older-than 5d";
     };
-
-    package = pkgs.nix;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
   };
 
-  # Manages keys and such
   programs = {
     zsh.enable = true;
     nh.enable = true;
@@ -80,20 +107,6 @@ in {
     xserver = {
       enable = true;
 
-      # Uncomment these for AMD or Nvidia GPU
-      # boot.initrd.kernelModules = [ "amdgpu" ];
-      # videoDrivers = [ "amdgpu" ];
-      # videoDrivers = [ "nvidia" ];
-
-      # Uncomment for Nvidia GPU
-      # This helps fix tearing of windows for Nvidia cards
-      # screenSection = ''
-      #   Option       "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
-      #   Option       "AllowIndirectGLXProtocol" "off"
-      #   Option       "TripleBuffer" "on"
-      # '';
-
-      # Turn Caps Lock into Ctrl
       layout = "us";
       xkb = {
         layout = "us";
@@ -101,18 +114,10 @@ in {
       xkbOptions = "ctrl:nocaps";
 
       # Better support for general peripherals
-      # libinput.enable = true;
+      libinput.enable = true;
     };
 
-    # Let's be able to SSH into this machine
-    # openssh.enable = true;
-
-    # Enable CUPS to print documents
-    # printing.enable = true;
-    # printing.drivers = [ pkgs.brlaser ]; # Brother printer driver
-
-    # gvfs.enable = true; # Mount, trash, and other functionalities
-    # tumbler.enable = true; # Thumbnail support for images
+    printing.enable = true;
 
     # Audio
     pipewire = {
@@ -126,24 +131,10 @@ in {
   security.rtkit.enable = true;
   # Video support
   hardware = {
-    # opengl.enable = true;
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     pulseaudio.enable = false;
     # hardware.nvidia.modesetting.enable = true;
-
-    # Enable Xbox support
-    # hardware.xone.enable = true;
-
-    # Crypto wallet support
-    # ledger.enable = true;
   };
-
-  # Add docker daemon
-  # virtualisation = {
-  #   docker = {
-  #     enable = true;
-  #     logDriver = "json-file";
-  #   };
-  # };
 
   # It's me, it's you, it's everyone
   users.users = {
@@ -171,10 +162,6 @@ in {
     extraRules = [
       {
         commands = [
-          # {
-          #   command = "${pkgs.systemd}/bin/reboot";
-          #   options = ["NOPASSWD"];
-          # }
           {
             command = "ALL";
             options = ["NOPASSWD"];
@@ -188,6 +175,20 @@ in {
   environment.systemPackages = [
     where-is-my-sddm-theme
   ];
+  environment.sessionVariables = {
+    FLAKE = "/home/nommy/nixes";
+    BAR_PATH = "$FLAKE/home-manager/$HOST/config/ags";
+    WALL_PATH = "$FLAKE/walls/sushi.jpg";
 
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+
+    TERMINAL = "kitty";
+    BROWSER = "google-chrome-stable";
+    EDITOR = "code";
+    LAUNCHER = "rofi -show drun";
+    EMOJI = "rofi -modi emoji:rofimoji -show emoji";
+  };
   system.stateVersion = "24.11";
 }
