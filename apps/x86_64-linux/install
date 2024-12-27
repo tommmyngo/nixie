@@ -70,7 +70,7 @@ prompt_reboot() {
   esac
 }
 
-# cleanup
+cleanup
 check_installer
 download_config
 run_apply
