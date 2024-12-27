@@ -130,7 +130,7 @@ in {
   # Video support
   hardware = {
     opengl.enable = true;
-    pulseaudio.enable = true;
+    pulseaudio.enable = false;
     # hardware.nvidia.modesetting.enable = true;
 
     # Enable Xbox support

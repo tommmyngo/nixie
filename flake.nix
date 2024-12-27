@@ -115,7 +115,7 @@
       system: let
         user = "nommy";
       in
-        darwin.lib.darwinSystem {
+        darwin.lib.darwinSystem rec {
           inherit system;
           specialArgs = inputs;
           modules = [
@@ -136,7 +136,7 @@
             }
             {
               home-manager.useGlobalPkgs = true;
-              home-manager.extraSpecialArgs = {inherit inputs;};
+              home-manager.extraSpecialArgs = specialArgs;
             }
             ./hosts/darwin
           ];
@@ -157,7 +157,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.${user} = import ./modules/nixos/home-manager.nix;
-              extraSpecialArgs = inputs;
+              extraSpecialArgs = specialArgs;
             };
           }
           ./hosts/nixos

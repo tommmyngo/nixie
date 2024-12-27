@@ -11,7 +11,7 @@ check_installer() {
 }
 
 cleanup() {
-  rm -rf nixie-main.zip nixie-main nixie
+  rm -rf nixie nixie.zip
 }
 
 download_config() {
