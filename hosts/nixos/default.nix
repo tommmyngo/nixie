@@ -6,7 +6,7 @@
 }: let
   user = "nommy";
   # keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p"];
-  where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
+  # where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
 in {
   imports = [
     ../../modules/nixos/disk-config.nix
@@ -63,11 +63,15 @@ in {
     getty.autologinUser = "nommy";
     displayManager = {
       defaultSession = "hyprland";
-      sddm = {
+      # sddm = {
+      #   enable = true;
+      #   wayland.enable = true;
+      #   extraPackages = [where-is-my-sddm-theme];
+      #   theme = "where_is_my_sddm_theme_qt5";
+      # };
+      lightdm = {
         enable = true;
-        wayland.enable = true;
-        extraPackages = [where-is-my-sddm-theme];
-        theme = "where_is_my_sddm_theme_qt5";
+        greeters.slick.enable = true;
       };
     };
     xserver = {
@@ -88,6 +92,13 @@ in {
   hardware = {
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     pulseaudio.enable = false;
+
+    # Video support
+    # opengl = {
+    #   enable = true;
+    #   driSupport32Bit = true;
+    #   driSupport = true;
+    # };
   };
 
   # It's me, it's you, it's everyone
@@ -121,7 +132,7 @@ in {
   };
 
   environment.systemPackages = [
-    where-is-my-sddm-theme
+    # where-is-my-sddm-theme
   ];
 
   environment.sessionVariables = {
