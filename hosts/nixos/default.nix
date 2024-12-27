@@ -32,7 +32,7 @@ in {
     hostName = "hako";
     networkmanager.enable = true;
     useDHCP = lib.mkDefault false;
-    interfaces."%INTERFACE%".useDHCP = true;
+    interfaces."wlp2s0".useDHCP = true;
   };
 
   nix = {
