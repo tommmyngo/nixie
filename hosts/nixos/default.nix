@@ -91,7 +91,7 @@ in {
   };
   security.rtkit.enable = true;
   hardware = {
-    # cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     pulseaudio.enable = false;
 
     # Video support
