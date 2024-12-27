@@ -101,18 +101,18 @@ in {
       xkbOptions = "ctrl:nocaps";
 
       # Better support for general peripherals
-      libinput.enable = true;
+      # libinput.enable = true;
     };
 
     # Let's be able to SSH into this machine
-    openssh.enable = true;
+    # openssh.enable = true;
 
     # Enable CUPS to print documents
     # printing.enable = true;
     # printing.drivers = [ pkgs.brlaser ]; # Brother printer driver
 
-    gvfs.enable = true; # Mount, trash, and other functionalities
-    tumbler.enable = true; # Thumbnail support for images
+    # gvfs.enable = true; # Mount, trash, and other functionalities
+    # tumbler.enable = true; # Thumbnail support for images
 
     # Audio
     pipewire = {
@@ -123,13 +123,10 @@ in {
       jack.enable = true;
     };
   };
-
-  # Enable sound
-  sound.enable = true;
-
+  security.rtkit.enable = true;
   # Video support
   hardware = {
-    opengl.enable = true;
+    # opengl.enable = true;
     pulseaudio.enable = false;
     # hardware.nvidia.modesetting.enable = true;
 
@@ -137,16 +134,16 @@ in {
     # hardware.xone.enable = true;
 
     # Crypto wallet support
-    ledger.enable = true;
+    # ledger.enable = true;
   };
 
   # Add docker daemon
-  virtualisation = {
-    docker = {
-      enable = true;
-      logDriver = "json-file";
-    };
-  };
+  # virtualisation = {
+  #   docker = {
+  #     enable = true;
+  #     logDriver = "json-file";
+  #   };
+  # };
 
   # It's me, it's you, it's everyone
   users.users = {
