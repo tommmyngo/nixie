@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
+{pkgs, ...}:
 import ./fastfetch.nix
 // import ./zsh.nix
 // import ./git.nix

@@ -1,6 +1,2 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
-import ./home {inherit pkgs inputs;}
+{pkgs, ...}:
+import ./home {inherit pkgs;}

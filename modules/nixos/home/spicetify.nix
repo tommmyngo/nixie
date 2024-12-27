@@ -1,14 +1,14 @@
 {
-  inputs,
+  spicetify-nix,
   pkgs,
   ...
 }: {
   imports = [
-    inputs.spicetify-nix.homeManagerModules.default
+    spicetify-nix.homeManagerModules.default
   ];
 
   programs.spicetify = let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    spicePkgs = spicetify-nix.legacyPackages.${pkgs.system};
   in {
     enable = true;
     enabledExtensions = with spicePkgs.extensions; [

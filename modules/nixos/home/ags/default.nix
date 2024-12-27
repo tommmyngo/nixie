@@ -1,10 +1,10 @@
 {
-  inputs,
+  ags,
   pkgs,
   ...
 }: {
   imports = [
-    inputs.ags.homeManagerModules.default
+    ags.homeManagerModules.default
   ];
 
   programs.ags = {
@@ -12,10 +12,10 @@
     configDir = null;
 
     # Additional packages to add to GJS's runtime
-    extraPackages = with pkgs;
+    extraPackages =
       [
       ]
-      ++ (with inputs.ags.packages.${pkgs.system}; [
+      ++ (with ags.packages.${pkgs.system}; [
         hyprland
         powerprofiles
         network
