@@ -5,7 +5,7 @@
   ...
 }: let
   user = "nommy";
-  keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p"];
+  # keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p"];
   where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
 in {
   imports = [
@@ -70,6 +70,7 @@ in {
   nix = {
     nixPath = ["nixie=/home/${user}/.local/share/src/nixie:/etc/nixos:/home/nommy/nixie"];
     settings = {
+      experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
       allowed-users = ["${user}"];
       trusted-users = ["@admin" "${user}"];
@@ -82,9 +83,6 @@ in {
       dates = "weekly";
       options = "--delete-older-than 5d";
     };
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
   };
 
   programs = {
@@ -110,9 +108,6 @@ in {
       };
     };
 
-    # printing.enable = true;
-
-    # Audio
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -122,11 +117,9 @@ in {
     };
   };
   security.rtkit.enable = true;
-  # Video support
   hardware = {
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     pulseaudio.enable = false;
-    # hardware.nvidia.modesetting.enable = true;
   };
 
   # It's me, it's you, it's everyone
@@ -136,14 +129,8 @@ in {
       extraGroups = [
         "networkmanager"
         "wheel" # Enable ‘sudo’ for the user.
-        "docker"
       ];
       shell = pkgs.zsh;
-      openssh.authorizedKeys.keys = keys;
-    };
-
-    root = {
-      openssh.authorizedKeys.keys = keys;
     };
   };
 
