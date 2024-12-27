@@ -31,6 +31,8 @@
       gcm = "git commit -m";
       gps = "git push";
       gpl = "git pull";
+      gf = "git fetch";
+      grb = "git rebase";
       gmm = "git merge main";
       gcma = "gaa ; gcm";
       gchm = "gch main ; gpl";
