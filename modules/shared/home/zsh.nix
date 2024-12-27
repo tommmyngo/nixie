@@ -32,7 +32,7 @@
       gps = "git push";
       gpl = "git pull";
       gf = "git fetch";
-      grb = "git rebase";
+      grm = "git rebase main";
       gmm = "git merge main";
       gcma = "gaa ; gcm";
       gchm = "gch main ; gpl";
