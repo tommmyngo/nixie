@@ -156,7 +156,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.${user} = import ./modules/nixos/home-manager.nix;
+              users.${user} = import ./modules/nixos/home-manager.nix {inherit inputs;};
               extraSpecialArgs = {inherit inputs;};
             };
           }
