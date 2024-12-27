@@ -13,6 +13,8 @@ in {
     extraConfig = {
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
+      pull.rebase = true;
+      rebase.autoStash = true;
     };
   };
 }
