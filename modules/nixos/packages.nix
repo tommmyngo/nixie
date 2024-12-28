@@ -8,7 +8,4 @@ in
     rofimoji
     swww
     google-chrome
-
-    htop
-    
   ]
