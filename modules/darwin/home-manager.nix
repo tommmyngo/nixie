@@ -24,7 +24,6 @@ in {
   homebrew = {
     enable = true;
     casks = import ./casks.nix {};
-    # onActivation.cleanup = "uninstall";
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store
@@ -51,10 +50,6 @@ in {
         stateVersion = "24.11";
       };
       programs = shared-home-programs;
-
-      # Marked broken Oct 20, 2022 check later to remove this
-      # https://github.com/nix-community/home-manager/issues/3344
-      manual.manpages.enable = false;
     };
   };
 
