@@ -137,7 +137,7 @@
       "chat.commandCenter.enabled" = false;
       "git.autofetch" = true;
 
-      # Basically copied from Stylix theme extension on NixOS to share with MacOS
+      # Basically copied from Stylix theme extension on NixOS to share with MacOS - TODO: split this by system and let Stylix control NixOS themes
       "workbench.colorCustomizations" = {
         "focusBorder" = "#df5273";
         "foreground" = "#ffe6e0";
