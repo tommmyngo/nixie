@@ -6,9 +6,9 @@ function Time({ format = "%I:%M %p" }) {
     () => GLib.DateTime.new_now_local().format(format)!
   );
   return (
-    <box onDestroy={() => time.drop()}>
+    <button onDestroy={() => time.drop()}>
       <label className="Time" label={time()} />
-    </box>
+    </button>
   );
 }
 

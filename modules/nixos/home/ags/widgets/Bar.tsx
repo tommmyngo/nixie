@@ -26,7 +26,7 @@ export function Bar() {
         <box halign={Gtk.Align.END}>
           <Wifi />
           -
-          <Time format="%a %I:%M %p" />
+          <Time format="%a %b %e %G %I:%M %p" />
         </box>
       </centerbox>
     </window>
