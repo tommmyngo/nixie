@@ -10,6 +10,7 @@
     targets = {
       hyprpaper.enable = false;
       hyprland.hyprpaper.enable = false;
+      vscode.enable = false;
     };
   };
 }
