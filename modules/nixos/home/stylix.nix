@@ -11,6 +11,7 @@
       hyprpaper.enable = false;
       hyprland.hyprpaper.enable = false;
       vscode.enable = false;
+      alacritty.enable = false;
     };
   };
 }
