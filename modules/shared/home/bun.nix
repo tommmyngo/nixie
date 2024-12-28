@@ -1,0 +1,5 @@
+{
+  bun = {
+    enable = true;
+  };
+}

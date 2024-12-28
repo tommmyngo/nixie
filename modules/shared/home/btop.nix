@@ -1,0 +1,5 @@
+{
+  btop = {
+    enable = true;
+  };
+}

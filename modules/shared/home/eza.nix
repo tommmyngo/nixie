@@ -1,0 +1,5 @@
+{
+  eza = {
+    enable = true;
+  };
+}
