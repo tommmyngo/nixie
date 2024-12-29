@@ -47,9 +47,10 @@
       };
 
       window = {
+        decorations = "None";
         opacity = 0.9;
         padding = {
-          x = 32;
+          x = 24;
           y = 16;
         };
         dynamic_padding = true;

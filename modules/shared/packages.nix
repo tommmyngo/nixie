@@ -10,4 +10,6 @@ with pkgs; [
   pnpm
 
   vesktop
+  cbonsai
+  snowmachine
 ]

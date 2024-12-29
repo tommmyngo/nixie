@@ -22,5 +22,9 @@ in {
     udiskie.enable = true;
   };
 
-  programs = shared-programs;
+  programs =
+    shared-programs
+    // {
+      nixvim.enable = true;
+    };
 }
