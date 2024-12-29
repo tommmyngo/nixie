@@ -8,6 +8,7 @@
 // import ./bun.nix
 // import ./btop.nix
 // import ./fastfetch.nix
+// import ./firefox.nix {inherit pkgs;}
 // import ./zsh.nix
 // import ./git.nix
 // import ./vscode.nix {inherit pkgs;}
