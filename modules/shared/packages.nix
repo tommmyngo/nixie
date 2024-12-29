@@ -8,6 +8,7 @@ with pkgs; [
   # Node.js development tools
   nodejs
   pnpm
+  neovim
 
   vesktop
   cbonsai

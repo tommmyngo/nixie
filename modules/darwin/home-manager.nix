@@ -50,6 +50,12 @@ in {
         stateVersion = "24.11";
       };
       programs = shared-home-programs;
+      home.file = {
+        "./.config/nvim/" = {
+          source = ../shared/nvim;
+          recursive = true;
+        };
+      };
     };
   };
 
