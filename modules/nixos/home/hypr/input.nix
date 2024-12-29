@@ -6,7 +6,7 @@
         scroll_factor = 0.3;
         "tap-to-click" = false;
       };
-      kb_options = "caps:swapescape";
+      kb_options = "caps:escape";
     };
   };
 }

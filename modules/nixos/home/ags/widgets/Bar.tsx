@@ -4,6 +4,8 @@ import Time from "../widgets/Time";
 import Workspaces from "../widgets/Workspaces";
 import Wifi from "../widgets/Wifi";
 
+const margin = 120;
+
 export function Bar() {
   return (
     <window
@@ -16,7 +18,8 @@ export function Bar() {
         Astal.WindowAnchor.LEFT |
         Astal.WindowAnchor.RIGHT
       }
-      visible={true}
+      marginLeft={margin}
+      marginRight={margin}
     >
       <centerbox className="bar">
         <box halign={Gtk.Align.START}>
