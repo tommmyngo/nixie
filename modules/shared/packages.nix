@@ -8,7 +8,7 @@ with pkgs; [
 
   nodejs
   pnpm
-
+  zig
   #Apps
   vesktop
 
