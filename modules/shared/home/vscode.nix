@@ -133,6 +133,7 @@
       };
       "editor.formatOnSave" = true;
       "workbench.iconTheme" = "material-icon-theme";
+      "workbench.colorTheme" = "Visual Studio Dark";
       "editor.fontFamily" = "GeistMono Nerd Font";
       "chat.commandCenter.enabled" = false;
       "git.autofetch" = true;

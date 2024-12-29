@@ -48,6 +48,12 @@
 
       window = {
         opacity = 0.9;
+        padding = {
+          x = 32;
+          y = 16;
+        };
+        dynamic_padding = true;
+        blur = true;
       };
     };
   };
