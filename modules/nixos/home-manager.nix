@@ -8,7 +8,6 @@
 in {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-
     ./home
   ];
   home = {
@@ -23,6 +22,5 @@ in {
     udiskie.enable = true;
   };
 
-  wayland.windowManager.hyprland.enable = true;
   programs = shared-programs;
 }
