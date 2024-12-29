@@ -3,8 +3,6 @@ import { App, Astal, Gtk } from "astal/gtk3";
 import Time from "../widgets/Time";
 import Workspaces from "../widgets/Workspaces";
 import Wifi from "../widgets/Wifi";
-import { BindableChild } from "node_modules/astal/gtk3/astalify";
-import { BoxProps, ButtonProps } from "astal/gtk3/widget";
 
 export function Bar() {
   return (
