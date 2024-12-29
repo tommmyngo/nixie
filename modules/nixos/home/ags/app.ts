@@ -14,6 +14,7 @@ monitorFile("./scss", () => {
 });
 
 App.start({
+  icons: "./icons",
   css: style,
   requestHandler(request, response) {
     print(request);

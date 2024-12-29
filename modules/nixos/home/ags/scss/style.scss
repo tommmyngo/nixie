@@ -1,7 +1,6 @@
 @use "sass:map";
-@use "./window.scss";
 @use "./button.scss";
-@use "./utils.scss";
+@use "./utils.scss" as *;
 @use "./vars.scss" as *;
 
 * {
@@ -10,10 +9,17 @@
   min-width: $fontSize;
 }
 
-.icon {
-  padding-right: map.get($spacing, 2);
+button,
+box,
+icon,
+label {
+  font: inherit;
 }
 
-.bar {
-  padding: 8px $fontSize;
+window#bar {
+  background-color: gtkalpha($bg, 0.9);
+  color: $fg;
+  centerbox {
+    padding: 0 $pad;
+  }
 }

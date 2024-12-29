@@ -1,7 +1,0 @@
-@use "./utils.scss" as *;
-@use "./vars.scss" as *;
-
-window#bar {
-  background-color: gtkalpha($bg, 1);
-  color: $fg;
-}

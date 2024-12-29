@@ -1,17 +1,18 @@
 @use "./utils.scss" as *;
 @use "./vars.scss" as *;
 @use "sass:color";
+@use "sass:map";
 
 button {
   transition-duration: 0.2s;
-  &:hover:not(.btn-enabled) {
-    background-color: color.scale($accent, $lightness: -30%);
-  }
+  padding: map.get($spacing, 0.5) map.get($spacing, 1);
+  border-radius: $radius;
+
   &:active:not(.btn-enabled) {
     background-color: color.scale($accent, $lightness: -10%);
   }
 
-  &.btn {
+  &.btn-primary {
     background-color: $primary;
     color: $fg;
   }

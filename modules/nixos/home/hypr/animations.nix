@@ -2,7 +2,6 @@
   wayland.windowManager.hyprland.settings = {
     animations = {
       enabled = true;
-      # first_launch_animation = true;
       animation = [
         "windowsIn,1,5,default,popin 0%"
         "windowsOut,1,5,default,popin"

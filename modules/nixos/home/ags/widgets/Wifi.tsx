@@ -33,50 +33,50 @@ export function getNetworkIcon(network: AstalNetwork.Network) {
 
     // If Wi-Fi is disabled or there is no connectivity
     if (!enabled || connectivity === AstalNetwork.Connectivity.NONE) {
-      return "󰤭";
+      return <icon icon="wifi_off" />;
     }
 
     // Based on Wi-Fi signal strength and internet status
     if (strength <= 25) {
       if (internet === AstalNetwork.Internet.DISCONNECTED) {
-        return "󰤠";
+        return <icon icon="wifi_bad" />;
       } else if (internet === AstalNetwork.Internet.CONNECTED) {
-        return "󰤟";
+        return <icon icon="wifi_1" />;
       } else if (internet === AstalNetwork.Internet.CONNECTING) {
-        return "󰤡";
+        return <icon icon="wifi_find" />;
       }
     } else if (strength <= 50) {
       if (internet === AstalNetwork.Internet.DISCONNECTED) {
-        return "󰤣";
+        return <icon icon="wifi_bad" />;
       } else if (internet === AstalNetwork.Internet.CONNECTED) {
-        return "󰤢";
+        return <icon icon="wifi_2" />;
       } else if (internet === AstalNetwork.Internet.CONNECTING) {
-        return "󰤤";
+        return <icon icon="wifi_find" />;
       }
     } else if (strength <= 75) {
       if (internet === AstalNetwork.Internet.DISCONNECTED) {
-        return "󰤦";
+        return <icon icon="wifi_bad" />;
       } else if (internet === AstalNetwork.Internet.CONNECTED) {
-        return "󰤥";
+        return <icon icon="wifi_3" />;
       } else if (internet === AstalNetwork.Internet.CONNECTING) {
-        return "󰤧";
+        return <icon icon="wifi_find" />;
       }
     } else {
       if (internet === AstalNetwork.Internet.DISCONNECTED) {
-        return "󰤩";
+        return <icon icon="wifi_bad" />;
       } else if (internet === AstalNetwork.Internet.CONNECTED) {
-        return "󰤨";
+        return <icon icon="wifi_4" />;
       } else if (internet === AstalNetwork.Internet.CONNECTING) {
-        return "󰤪";
+        return <icon icon="wifi_find" />;
       }
     }
 
     // Fallback if none of the conditions are met
-    return "󰤯";
+    return <icon icon="wifi_0" />;
   }
 
   // Default or unknown status
-  return "󰤮";
+  return <icon icon="wifi_unknown" />;
 }
 
 export default Wifi;

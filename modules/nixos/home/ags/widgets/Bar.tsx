@@ -3,6 +3,8 @@ import { App, Astal, Gtk } from "astal/gtk3";
 import Time from "../widgets/Time";
 import Workspaces from "../widgets/Workspaces";
 import Wifi from "../widgets/Wifi";
+import { BindableChild } from "node_modules/astal/gtk3/astalify";
+import { BoxProps, ButtonProps } from "astal/gtk3/widget";
 
 export function Bar() {
   return (
@@ -19,14 +21,17 @@ export function Bar() {
       visible={true}
     >
       <centerbox className="bar">
-        <box halign={Gtk.Align.START}></box>
+        <box halign={Gtk.Align.START}>
+          <button>
+            <icon icon="rain" />
+          </button>
+        </box>
         <box>
           <Workspaces />
         </box>
         <box halign={Gtk.Align.END}>
           <Wifi />
-          -
-          <Time format="%a %b %e %G %I:%M %p" />
+          <Time />
         </box>
       </centerbox>
     </window>

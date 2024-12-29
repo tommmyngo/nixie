@@ -1,15 +1,11 @@
 import { Variable, GLib } from "astal";
 
-function Time({ format = "%I:%M %p" }) {
+function Time({ format = "%a %b %e %g %l:%M %p" }) {
   const time = Variable<string>("").poll(
     1000,
     () => GLib.DateTime.new_now_local().format(format)!
   );
-  return (
-    <button onDestroy={() => time.drop()}>
-      <label className="Time" label={time()} />
-    </button>
-  );
+  return <button onDestroy={() => time.drop()}>{time()}</button>;
 }
 
 export default Time;
