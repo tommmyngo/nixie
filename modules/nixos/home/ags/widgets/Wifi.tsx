@@ -4,7 +4,7 @@ import AstalNetwork from "gi://AstalNetwork";
 
 function Wifi() {
   const { wifi } = AstalNetwork.get_default();
-  return <button className="btn-ghost icon">{getNetworkIconBinding()}</button>;
+  return <button>{getNetworkIconBinding()}</button>;
 }
 
 export function getNetworkIconBinding() {
