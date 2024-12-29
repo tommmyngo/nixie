@@ -6,6 +6,13 @@ in {
     ../../modules/shared
   ];
 
+  users.users.${user} = {
+    name = "${user}";
+    home = "/Users/${user}";
+    isHidden = false;
+    shell = pkgs.zsh;
+  };
+
   services.nix-daemon.enable = true;
 
   nix = {

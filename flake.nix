@@ -146,8 +146,11 @@
               };
             }
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.extraSpecialArgs = specialArgs;
+              home-manager = {
+                useGlobalPkgs = true;
+                users.${user} = import ./modules/darwin/new-home-manager.nix;
+                extraSpecialArgs = specialArgs;
+              };
             }
             ./hosts/darwin
           ];
