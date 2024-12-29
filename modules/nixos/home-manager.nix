@@ -7,6 +7,8 @@
   shared-programs = import ../shared/home-manager.nix {inherit inputs pkgs;};
 in {
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+
     ./home
   ];
   home = {

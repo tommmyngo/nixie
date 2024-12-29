@@ -2,6 +2,7 @@
 {
   eza.enable = true;
   zoxide.enable = true;
+  nixvim.enable = true;
 }
 # Kitty broken on Darwin - using alacritty instead
 // import ./alacritty.nix

@@ -8,6 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nix-darwin.follows = "darwin";
+      };
+    };
     #MacOS Flakes
     darwin = {
       url = "github:LnL7/nix-darwin/master";
@@ -68,6 +75,7 @@
     hyprland,
     spicetify-nix,
     ags,
+    nixvim,
   } @ inputs: let
     user = "nommy";
     linuxSystems = ["x86_64-linux" "aarch64-linux"];
