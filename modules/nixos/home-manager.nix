@@ -4,10 +4,10 @@
   ...
 }: let
   user = "nommy";
-  shared-programs = import ../shared/home-manager.nix {inherit inputs pkgs;};
 in {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ../shared/home-manager.nix
     ./home
   ];
   home = {
@@ -22,9 +22,5 @@ in {
     udiskie.enable = true;
   };
 
-  programs =
-    shared-programs
-    // {
-      nixvim.enable = true;
-    };
+  programs.nixvim.enable = true;
 }

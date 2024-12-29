@@ -1,4 +1,0 @@
-_: [
-  "google-chrome"
-  "raycast"
-]

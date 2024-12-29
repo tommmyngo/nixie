@@ -130,6 +130,7 @@
           inherit system;
           specialArgs = inputs;
           modules = [
+            ./hosts/darwin
             home-manager.darwinModules.home-manager
             nix-homebrew.darwinModules.nix-homebrew
             {
@@ -148,11 +149,10 @@
             {
               home-manager = {
                 useGlobalPkgs = true;
-                users.${user} = import ./modules/darwin/new-home-manager.nix;
+                users.${user} = import ./modules/darwin/home-manager.nix;
                 extraSpecialArgs = specialArgs;
               };
             }
-            ./hosts/darwin
           ];
         }
     );

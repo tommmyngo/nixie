@@ -2,7 +2,7 @@
   user = "nommy";
 in {
   imports = [
-    ../../modules/darwin/home-manager.nix
+    ../../modules/darwin/system
     ../../modules/shared
   ];
 

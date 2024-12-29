@@ -1,20 +1,21 @@
-{pkgs, ...}:
-{
-  eza.enable = true;
-  zoxide.enable = true;
-  fzf.enable = true;
-  lazygit.enable = true;
-  fd.enable = true;
-  ripgrep.enable = true;
-  neovim.enable = true;
+{pkgs, ...}: {
+  imports = [
+    ./alacritty.nix
+    ./bun.nix
+    ./btop.nix
+    ./fastfetch.nix
+    ./git.nix
+    ./nvim
+    ./starship.nix
+    ./vscode.nix
+    ./yazi.nix
+    ./zsh.nix
+  ];
+  programs.eza.enable = true;
+  programs.zoxide.enable = true;
+  programs.fzf.enable = true;
+  programs.lazygit.enable = true;
+  programs.fd.enable = true;
+  programs.ripgrep.enable = true;
+  programs.neovim.enable = true;
 }
-# Kitty broken on Darwin - using alacritty instead
-// import ./alacritty.nix
-// import ./bun.nix
-// import ./btop.nix
-// import ./fastfetch.nix
-// import ./zsh.nix
-// import ./git.nix
-// import ./vscode.nix {inherit pkgs;}
-// import ./yazi.nix
-// import ./starship.nix
