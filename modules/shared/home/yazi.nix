@@ -5,7 +5,10 @@
       manager = {
         show_hidden = true;
         sort_by = "mtime";
-        sort_dir_first = true;
+        sort_reverse = false;
+        linemode = "mtime";
+        ratio = [2 3 3];
+        mouse_events = ["scroll"];
       };
     };
   };

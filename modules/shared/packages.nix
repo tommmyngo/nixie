@@ -8,4 +8,6 @@ with pkgs; [
   # Node.js development tools
   nodejs
   pnpm
+
+  vesktop
 ]
