@@ -38,6 +38,9 @@ in {
       allowed-users = ["${user}"];
       trusted-users = ["@admin" "${user}"];
     };
+    gc = {
+      dates = "weekly";
+    };
   };
 
   programs = {

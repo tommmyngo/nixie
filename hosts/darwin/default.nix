@@ -9,6 +9,14 @@ in {
   services.nix-daemon.enable = true;
 
   nix = {
+    gc = {
+      user = "root";
+      interval = {
+        Weekday = 0;
+        Hour = 2;
+        Minute = 0;
+      };
+    };
     settings = {
       trusted-users = ["@admin" "${user}"];
     };
