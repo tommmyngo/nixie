@@ -12,7 +12,7 @@ function Workspaces() {
           .sort((a, b) => a.id - b.id)
           .map((ws) => {
             const className = bind(ws.monitor, "activeWorkspace").as((aws) =>
-              aws.id === ws.id ? "btn-enabled" : ""
+              aws.id === ws.id ? "enabled" : ""
             );
             return (
               <button className={className} onClicked={() => ws.focus()}>
