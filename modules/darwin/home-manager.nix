@@ -44,18 +44,15 @@ in {
   # Enable home-manager
   home-manager = {
     users.${user} = {pkgs, ...}: {
+      imports = [
+        ../../modules/shared/new-home-manager.nix
+      ];
       home = {
         enableNixpkgsReleaseCheck = false;
         packages = import ./packages.nix {inherit pkgs;};
         stateVersion = "24.11";
       };
       programs = shared-home-programs;
-      home.file = {
-        "./.config/nvim/" = {
-          source = ../shared/nvim;
-          recursive = true;
-        };
-      };
     };
   };
 

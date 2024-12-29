@@ -2,6 +2,11 @@
 {
   eza.enable = true;
   zoxide.enable = true;
+  fzf.enable = true;
+  lazygit.enable = true;
+  fd.enable = true;
+  ripgrep.enable = true;
+  neovim.enable = true;
 }
 # Kitty broken on Darwin - using alacritty instead
 // import ./alacritty.nix
