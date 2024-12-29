@@ -21,7 +21,7 @@ export function Bar() {
       <centerbox className="bar">
         <box halign={Gtk.Align.START}>
           <button>
-            <icon icon="rain" />
+            <icon icon="nix" />
           </button>
         </box>
         <box>
