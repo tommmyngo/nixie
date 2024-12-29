@@ -4,6 +4,7 @@
       # Wallpaper
       "swww-daemon & swww img $WALL_PATH"
       "ags run $BAR_PATH"
+      "gammastep -O 4500"
     ];
   };
 }

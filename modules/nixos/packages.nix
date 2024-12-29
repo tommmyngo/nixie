@@ -8,4 +8,5 @@ in
     rofimoji
     swww
     google-chrome
+    gammastep
   ]
