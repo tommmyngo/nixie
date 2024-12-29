@@ -6,7 +6,6 @@
   user = "nommy";
 in {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
     ../shared/home-manager.nix
     ./home
   ];
@@ -21,6 +20,4 @@ in {
   services = {
     udiskie.enable = true;
   };
-
-  programs.nixvim.enable = true;
 }
