@@ -26,6 +26,7 @@ in {
 
     defaults = {
       NSGlobalDomain = {
+        NSAutomaticCapitalizationEnabled = false;
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
         AppleInterfaceStyle = "Dark";
