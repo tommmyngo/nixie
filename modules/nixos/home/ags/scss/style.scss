@@ -9,13 +9,6 @@
   min-width: $fontSize;
 }
 
-button,
-box,
-icon,
-label {
-  font: inherit;
-}
-
 window#bar {
   background-color: gtkalpha($bg, 0.9);
   color: $fg;
