@@ -16,7 +16,7 @@ function Workspaces() {
             );
             return (
               <button className={className} onClicked={() => ws.focus()}>
-                <icon icon="hex" />
+                <icon icon="diamond" />
               </button>
             );
           })

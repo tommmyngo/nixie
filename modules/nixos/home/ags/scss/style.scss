@@ -39,8 +39,8 @@ $accent: #6f6f70;
 }
 
 window#bar {
-  // background-color: gtkalpha($bg, 0.9);
-  background-color: transparent;
+  background-color: gtkalpha($bg, 0.9);
+  // background-color: transparent;
   color: $fg;
   centerbox {
     padding: $spacing-1 $spacing-6;
