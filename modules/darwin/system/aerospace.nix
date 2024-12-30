@@ -30,7 +30,7 @@
       # All possible modifiers: cmd, alt, ctrl, shift
       mode.main.binding = {
         # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-        alt-space = "layout tiling floating";
+        shift-space = "layout tiling floating";
 
         # Moving windows within layout - Vim
         alt-h = "focus left";
@@ -43,29 +43,29 @@
         alt-shift-l = "move right";
 
         # Switching Workspaces and moving to Workspaces
-        alt-1 = "workspace 1";
-        alt-2 = "workspace 2";
-        alt-3 = "workspace 3";
-        alt-4 = "workspace 4";
-        # alt-5 = "workspace 5";
-        # alt-6 = "workspace 6";
-        # alt-7 = "workspace 7";
-        # alt-8 = "workspace 8";
-        alt-a = "workspace prev --wrap-around";
-        alt-d = "workspace next --wrap-around";
-        alt-shift-1 = "move-node-to-workspace 1";
-        alt-shift-2 = "move-node-to-workspace 2";
-        alt-shift-3 = "move-node-to-workspace 3";
-        alt-shift-4 = "move-node-to-workspace 4";
-        # alt-shift-5 = "move-node-to-workspace 5";
-        # alt-shift-6 = "move-node-to-workspace 6";
-        # alt-shift-7 = "move-node-to-workspace 7";
-        # alt-shift-8 = "move-node-to-workspace 8";
-        alt-shift-a = "move-node-to-workspace prev --wrap-around";
-        alt-shift-d = "move-node-to-workspace next --wrap-around";
+        cmd-1 = "workspace 1";
+        cmd-2 = "workspace 2";
+        cmd-3 = "workspace 3";
+        cmd-4 = "workspace 4";
+        # cmd-5 = "workspace 5";
+        # cmd-6 = "workspace 6";
+        # cmd-7 = "workspace 7";
+        # cmd-8 = "workspace 8";
+        cmd-h = "workspace prev --wrap-around";
+        cmd-l = "workspace next --wrap-around";
+        cmd-shift-1 = "move-node-to-workspace 1";
+        cmd-shift-2 = "move-node-to-workspace 2";
+        cmd-shift-3 = "move-node-to-workspace 3";
+        cmd-shift-4 = "move-node-to-workspace 4";
+        # cmd-shift-5 = "move-node-to-workspace 5";
+        # cmd-shift-6 = "move-node-to-workspace 6";
+        # cmd-shift-7 = "move-node-to-workspace 7";
+        # cmd-shift-8 = "move-node-to-workspace 8";
+        cmd-shift-h = "move-node-to-workspace prev --wrap-around";
+        cmd-shift-l = "move-node-to-workspace next --wrap-around";
 
-        alt-ctrl-left = "resize smart -50";
-        alt-ctrl-right = "resize smart +50";
+        alt-ctrl-j = "resize smart -50";
+        alt-ctrl-k = "resize smart +50";
       };
     };
   };

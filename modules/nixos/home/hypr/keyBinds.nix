@@ -10,6 +10,7 @@
       "SUPER_CTRL_ALT,  C, exec, $BROWSER"
       "SUPER_CTRL_ALT,  V, exec, $EDITOR"
       "SUPER_CTRL_ALT,  S, exec, spotify"
+      "ALT,             E, exec, $EMOJI"
 
       # Layouts - not used much
       # "SUPER,           G, togglegroup"
@@ -21,33 +22,33 @@
       "ALT,             Q,      killactive,"
       "CTRL_SHIFT,      Q,      exit,"
       "CTRL_SHIFT,      B,      exec, ags quit -i astal ; ags run $BAR_PATH"
-      "SUPER,           F,      fullscreen, 0"
-      "SUPER,           S,      pseudo,"
-      "SUPER,           Space,  togglefloating,"
-      "SUPER,           Space,  centerwindow,"
-      "ALT,             E,      exec, $EMOJI"
+
+      "CTRL_SUPER,      M,      fullscreen, 0"
+      "CTRL_SUPER,      S,      pseudo,"
+      "SHIFT,           Space,  togglefloating,"
+      "SHIFT,           Space,  centerwindow,"
 
       # Switching Workspaces and moving to Workspaces
-      "SUPER,             1,  workspace, 1"
-      "SUPER,             2,  workspace, 2"
-      "SUPER,             3,  workspace, 3"
-      "SUPER,             4,  workspace, 4"
-      "SUPER,             5,  workspace, 5"
-      "SUPER,             6,  workspace, 6"
-      "SUPER,             7,  workspace, 7"
-      "SUPER,             8,  workspace, 8"
-      "SUPER,             A,  workspace, e-1"
-      "SUPER,             D,  workspace, e+1"
-      "SUPER_SHIFT,       1,  movetoworkspace, 1"
-      "SUPER_SHIFT,       2,  movetoworkspace, 2"
-      "SUPER_SHIFT,       3,  movetoworkspace, 3"
-      "SUPER_SHIFT,       4,  movetoworkspace, 4"
-      "SUPER_SHIFT,       5,  movetoworkspace, 5"
-      "SUPER_SHIFT,       6,  movetoworkspace, 6"
-      "SUPER_SHIFT,       7,  movetoworkspace, 7"
-      "SUPER_SHIFT,       8,  movetoworkspace, 8"
-      "SUPER_SHIFT,       A,  movetoworkspace, e-1"
-      "SUPER_SHIFT,       D,  movetoworkspace, e+1"
+      "ALT,             1,  workspace, 1"
+      "ALT,             2,  workspace, 2"
+      "ALT,             3,  workspace, 3"
+      "ALT,             4,  workspace, 4"
+      "ALT,             5,  workspace, 5"
+      "ALT,             6,  workspace, 6"
+      "ALT,             7,  workspace, 7"
+      "ALT,             8,  workspace, 8"
+      "ALT,             H,  workspace, e-1"
+      "ALT,             L,  workspace, e+1"
+      "ALT_SHIFT,       1,  movetoworkspace, 1"
+      "ALT_SHIFT,       2,  movetoworkspace, 2"
+      "ALT_SHIFT,       3,  movetoworkspace, 3"
+      "ALT_SHIFT,       4,  movetoworkspace, 4"
+      "ALT_SHIFT,       5,  movetoworkspace, 5"
+      "ALT_SHIFT,       6,  movetoworkspace, 6"
+      "ALT_SHIFT,       7,  movetoworkspace, 7"
+      "ALT_SHIFT,       8,  movetoworkspace, 8"
+      "ALT_SHIFT,       H,  movetoworkspace, e-1"
+      "ALT_SHIFT,       L,  movetoworkspace, e+1"
 
       # Moving windows within layout - Vim
       "SUPER,             H,  movefocus, l"
@@ -62,28 +63,18 @@
       # Switch between last window/workspace
       "ALT,             Tab, focuscurrentorlast,"
       "ALT,             Tab, bringactivetotop,"
-
-      # Change Workspace Mode
-      "SUPER_CTRL,      F, workspaceopt, allfloat"
-      "SUPER_CTRL,      S, workspaceopt, allpseudo"
     ];
     bindm = [
-      # Mouse button
+      # Mouse move and resize with button
       "SUPER,           mouse:272, movewindow"
       "SUPER,           mouse:273, resizewindow"
     ];
     binde = [
       # Resize Active
-      "SUPER_CTRL,      left,  resizeactive, -20 0"
-      "SUPER_CTRL,      right, resizeactive, 20 0"
-      "SUPER_CTRL,      up,    resizeactive, 0 -20"
-      "SUPER_CTRL,      down,  resizeactive, 0 20"
-
-      # Move Active (Floating Only)
-      "SUPER_ALT,       left,  moveactive, -20 0"
-      "SUPER_ALT,       right, moveactive, 20 0"
-      "SUPER_ALT,       up,    moveactive, 0 -20"
-      "SUPER_ALT,       down,  moveactive, 0 20"
+      "SUPER_CTRL,      h,  resizeactive, -20% 0"
+      "SUPER_CTRL,      l, resizeactive, 20% 0"
+      "SUPER_CTRL,      k,    resizeactive, 0 -20%"
+      "SUPER_CTRL,      j,  resizeactive, 0 20%"
     ];
   };
 }
