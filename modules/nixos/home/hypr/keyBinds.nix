@@ -7,8 +7,8 @@
       "CTRL_ALT,        C,      exec, google-chrome-stable"
       "CTRL_ALT,        V,      exec, code"
       "CTRL_ALT,        S,      exec, spotify"
-      "CTRL_ALT,        Return, exec, alacritty"
-      "CTRL_ALT,        E,      exec, $EMOJI"
+      "CTRL_ALT,        Return, exec, wezterm"
+      "CTRL_ALT,        E,      exec, rofi -modi emoji:rofimoji -show emoji"
 
       # Hyprland
       "CTRL_SHIFT,      E,      exit,"
