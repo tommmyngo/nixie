@@ -55,9 +55,6 @@
         # Remove history data we don't want to see
         export HISTIGNORE="pwd:ls:cd"
 
-        export EDITOR="code"
-        export BROWSER="google-chrome-stable"
-
         # nix shortcuts
         shell() {
             nix-shell '<nixpkgs>' -A "$1"

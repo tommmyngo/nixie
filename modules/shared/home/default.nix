@@ -15,7 +15,6 @@
   programs.lazygit.enable = true;
   programs.fd.enable = true;
   programs.ripgrep.enable = true;
-  programs.neovim.enable = true;
   programs.bun.enable = true;
   programs.btop.enable = true;
 }
