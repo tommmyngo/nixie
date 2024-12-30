@@ -1,32 +1,24 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      # Terminal
-      "SUPER_CTRL_ALT,             Return, exec, $TERMINAL"
-      # App Launcher
-      "ALT,             Space,  exec, $LAUNCHER"
+      "ALT,             Space,  exec, rofi -show drun"
 
-      # Apps Shortcuts
-      "SUPER_CTRL_ALT,  C, exec, $BROWSER"
-      "SUPER_CTRL_ALT,  V, exec, $EDITOR"
-      "SUPER_CTRL_ALT,  S, exec, spotify"
-      "ALT,             E, exec, $EMOJI"
-
-      # Layouts - not used much
-      # "SUPER,           G, togglegroup"
-      # "SUPER,           H, changegroupactive, b"
-      # "SUPER,           L, changegroupactive, f"
-      # "SUPER_SHIFT,     L, lockactivegroup, toggle"
+      # Launching Applications
+      "CTRL_ALT,        C,      exec, google-chrome-stable"
+      "CTRL_ALT,        V,      exec, code"
+      "CTRL_ALT,        S,      exec, spotify"
+      "CTRL_ALT,        Return, exec, alacritty"
+      "CTRL_ALT,        E,      exec, $EMOJI"
 
       # Hyprland
-      "ALT,             Q,      killactive,"
-      "CTRL_SHIFT,      Q,      exit,"
+      "CTRL_SHIFT,      E,      exit,"
       "CTRL_SHIFT,      B,      exec, ags quit -i astal ; ags run $BAR_PATH"
 
       "CTRL_SUPER,      M,      fullscreen, 0"
       "CTRL_SUPER,      S,      pseudo,"
       "SHIFT,           Space,  togglefloating,"
       "SHIFT,           Space,  centerwindow,"
+      "ALT,             Q,      killactive,"
 
       # Switching Workspaces and moving to Workspaces
       "ALT,             1,  workspace, 1"

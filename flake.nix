@@ -115,9 +115,7 @@
     apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
 
     darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (
-      system: let
-        user = "nommy";
-      in
+      system:
         darwin.lib.darwinSystem rec {
           inherit system;
           specialArgs = inputs;
@@ -149,25 +147,27 @@
         }
     );
 
-    nixosConfigurations = nixpkgs.lib.genAttrs linuxSystems (system:
-      nixpkgs.lib.nixosSystem rec {
-        inherit system;
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/nixos
-          disko.nixosModules.disko
-          stylix.nixosModules.stylix
-          hyprland.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${user} = import ./modules/nixos/home-manager.nix;
-              extraSpecialArgs = specialArgs;
-            };
-          }
-        ];
-      });
+    nixosConfigurations = nixpkgs.lib.genAttrs linuxSystems (
+      system:
+        nixpkgs.lib.nixosSystem rec {
+          inherit system;
+          specialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/nixos
+            disko.nixosModules.disko
+            stylix.nixosModules.stylix
+            hyprland.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.${user} = import ./modules/nixos/home-manager.nix;
+                extraSpecialArgs = specialArgs;
+              };
+            }
+          ];
+        }
+    );
   };
 }

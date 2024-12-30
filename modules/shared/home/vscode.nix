@@ -133,6 +133,9 @@
             };
           };
         };
+        "[lua]" = {
+          "editor.defaultFormatter" = "sumneko.lua";
+        };
         "editor.formatOnSave" = true;
         "workbench.iconTheme" = "material-icon-theme";
         "workbench.colorTheme" = "Horizon";

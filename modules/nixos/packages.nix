@@ -9,4 +9,6 @@ in
     swww
     google-chrome
     gammastep
+    librewolf-wayland
+    lua-language-server
   ]
