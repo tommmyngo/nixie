@@ -12,6 +12,7 @@
       hyprland.hyprpaper.enable = false;
       vscode.enable = false;
       alacritty.enable = false;
+      wezterm.enable = false;
     };
   };
 }
