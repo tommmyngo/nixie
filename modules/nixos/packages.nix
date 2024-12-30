@@ -10,5 +10,4 @@ in
     google-chrome
     gammastep
     librewolf-wayland
-    lua-language-server
   ]

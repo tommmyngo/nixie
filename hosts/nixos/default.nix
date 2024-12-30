@@ -4,7 +4,8 @@
   ...
 }: let
   user = "nommy";
-  where-is-my-sddm-theme = import ./sddm.nix {inherit pkgs;};
+  wimst = import ./sddm.nix {inherit pkgs;};
+  shared-packages = import ../../modules/shared/packages.nix {inherit pkgs;};
 in {
   imports = [
     ../../modules/nixos/disk-config.nix
@@ -56,7 +57,7 @@ in {
       sddm = {
         enable = true;
         wayland.enable = true;
-        extraPackages = [where-is-my-sddm-theme];
+        extraPackages = [wimst];
         theme = "where_is_my_sddm_theme_qt5";
       };
     };
@@ -109,9 +110,11 @@ in {
     ];
   };
 
-  environment.systemPackages = [
-    where-is-my-sddm-theme
-  ];
+  environment.systemPackages =
+    [
+      wimst
+    ]
+    ++ shared-packages;
 
   system.stateVersion = "24.11";
 }

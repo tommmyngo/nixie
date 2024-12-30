@@ -1,5 +1,6 @@
 {pkgs, ...}: let
   user = "nommy";
+  shared-packages = import ../../modules/shared/packages.nix {inherit pkgs;};
 in {
   imports = [
     ../../modules/darwin/system
@@ -34,7 +35,7 @@ in {
   environment.systemPackages = with pkgs;
     [
     ]
-    ++ (import ../../modules/shared/packages.nix {inherit pkgs;});
+    ++ shared-packages;
 
   system = {
     stateVersion = 5;

@@ -118,7 +118,10 @@
       system:
         darwin.lib.darwinSystem rec {
           inherit system;
-          specialArgs = inputs;
+          specialArgs = {
+            inherit inputs;
+            isDarwin = true;
+          };
           modules = [
             ./hosts/darwin
             home-manager.darwinModules.home-manager
@@ -151,7 +154,10 @@
       system:
         nixpkgs.lib.nixosSystem rec {
           inherit system;
-          specialArgs = {inherit inputs;};
+          specialArgs = {
+            inherit inputs;
+            isDarwin = false;
+          };
           modules = [
             ./hosts/nixos
             disko.nixosModules.disko
