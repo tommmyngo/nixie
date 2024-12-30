@@ -26,7 +26,7 @@ $spacing-16: 4rem;
 
 $fontSize: 36px;
 
-$bg: #2e303e;
+$bg: #1c1e26;
 $fg: #ffe6e0;
 $primary: #df5273;
 $accent: #6f6f70;
@@ -34,16 +34,21 @@ $accent: #6f6f70;
 * {
   all: unset;
   font-size: $fontSize;
-  min-width: $fontSize;
-  min-height: $fontSize;
+}
+
+.separator_h {
+  margin: 0 $spacing-1;
+}
+.separator_v {
+  margin: $spacing-1 0;
 }
 
 window#bar {
-  background-color: gtkalpha($bg, 0.9);
+  background-color: gtkalpha(color.scale($bg, $lightness: 3%), 0.9);
+  color: $fg;
   // background-color: transparent;
   border-bottom-right-radius: $spacing-6;
   border-bottom-left-radius: $spacing-6;
-  color: $fg;
   centerbox {
     padding: $spacing-1 $spacing-4 $spacing-2-5;
   }
