@@ -5,7 +5,7 @@
       settings = {
         general = {
           import = [
-            "~/nixie/modules/shared/home/alacritty-theme/horizon_dark.toml"
+            "~/nixie/horizon_dark.toml"
           ];
         };
 
