@@ -42,7 +42,7 @@
         alt-shift-k = "move up";
         alt-shift-l = "move right";
 
-        # Switching Workspaces and moving to Workspaces
+        # Switching Workspacdes and moving to Workspaces
         cmd-1 = "workspace 1";
         cmd-2 = "workspace 2";
         cmd-3 = "workspace 3";

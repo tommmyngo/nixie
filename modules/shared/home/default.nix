@@ -6,6 +6,7 @@
     ./nvim
     ./starship.nix
     ./vscode.nix
+    ./wezterm.nix
     ./yazi.nix
     ./zsh.nix
   ];
