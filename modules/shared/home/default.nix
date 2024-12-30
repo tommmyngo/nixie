@@ -12,6 +12,8 @@
   programs.eza.enable = true;
   programs.zoxide.enable = true;
   programs.fzf.enable = true;
+  programs.fzf.enableBashIntegration = false;
+  programs.fzf.enableZshIntegration = false;
   programs.lazygit.enable = true;
   programs.fd.enable = true;
   programs.ripgrep.enable = true;

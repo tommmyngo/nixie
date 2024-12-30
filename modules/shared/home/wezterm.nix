@@ -6,22 +6,23 @@
       config.front_end = "WebGpu"
       config.enable_wayland = false
 
-      config.color_scheme = "Horizon Dark (Gogh)"
+      config.color_scheme = "Horizon Dark (base16)"
       config.font = wezterm.font "GeistMono Nerd Font"
       config.window_background_opacity = 0.9
       config.hide_tab_bar_if_only_one_tab = true
+      config.tab_bar_at_bottom = true
 
       config.window_frame = {
-        active_titlebar_bg = '#1c1e26',
-        inactive_titlebar_bg = '#1c1e26',
+        active_titlebar_bg = 'none',
+        inactive_titlebar_bg = 'none',
       }
 
       config.colors = {
         tab_bar = {
-          background = '#1c1e26',
+          background = 'none',
           inactive_tab = {
             bg_color = '#1c1e26',
-            fg_color = '#808080',
+            fg_color = '#FFFFFF',
           },
           active_tab = {
             bg_color = '#1c1e26',
