@@ -26,7 +26,7 @@
         bradgashler.htmltagwrap
         jock.svg
         ms-python.black-formatter
-
+        sumneko.lua
         # stivo.tailwind-fold
         # fractalbrew.backticks
         # mrmlnc.vscode-scss
