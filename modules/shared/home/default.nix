@@ -1,8 +1,6 @@
-{pkgs, ...}: {
+{
   imports = [
     ./alacritty.nix
-    ./bun.nix
-    ./btop.nix
     ./fastfetch.nix
     ./git.nix
     ./nvim
@@ -18,4 +16,6 @@
   programs.fd.enable = true;
   programs.ripgrep.enable = true;
   programs.neovim.enable = true;
+  programs.bun.enable = true;
+  programs.btop.enable = true;
 }
