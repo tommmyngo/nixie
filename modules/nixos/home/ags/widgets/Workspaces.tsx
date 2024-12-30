@@ -1,4 +1,4 @@
-import { bind } from "astal";
+import { bind, Variable } from "astal";
 
 import AstalHyprland from "gi://AstalHyprland";
 
@@ -11,12 +11,30 @@ function Workspaces() {
         wss
           .sort((a, b) => a.id - b.id)
           .map((ws) => {
-            const className = bind(ws.monitor, "activeWorkspace").as((aws) =>
-              aws.id === ws.id ? "enabled" : ""
+            const isActive = bind(ws.monitor, "activeWorkspace").as(
+              (aws) => aws.id === ws.id
+            );
+            const hasWindows = bind(ws, "clients").as(
+              (clients) => clients.length > 0
+            );
+            const buttonClass = isActive.as((active) =>
+              active ? "enabled" : ""
+            );
+
+            const Icon = bind(
+              Variable.derive([isActive, hasWindows], (active, hasWindows) => {
+                if (active) {
+                  return <icon icon="diamond_enabled" />;
+                } else if (hasWindows) {
+                  return <icon className="enabled" icon="diamond_filled" />;
+                } else {
+                  return <icon icon="diamond_empty" />;
+                }
+              })
             );
             return (
-              <button className={className} onClicked={() => ws.focus()}>
-                <icon icon="diamond" />
+              <button className={buttonClass} onClicked={() => ws.focus()}>
+                {Icon}
               </button>
             );
           })
