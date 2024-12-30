@@ -3,7 +3,6 @@
     enable = true;
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
-    # base16Scheme = ../../../neo-horizon.yaml;
 
     # Comment out base16Scheme to let Stylix generate scheme based on Wallpaper
     image = ../../../walls/sushi.jpg;
