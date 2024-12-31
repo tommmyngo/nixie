@@ -16,6 +16,7 @@
         active_titlebar_bg = 'none',
         inactive_titlebar_bg = 'none',
       }
+      config.window_decorations = "RESIZE"
 
       config.colors = {
         tab_bar = {
