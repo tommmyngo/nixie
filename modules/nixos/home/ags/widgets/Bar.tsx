@@ -1,27 +1,27 @@
-import { App, Astal, Gtk } from "astal/gtk3";
+import { App, Astal, Gtk, Gdk } from "astal/gtk3";
 
 import { Separator } from "./UI";
 import Workspaces from "./Workspaces";
 import Wifi from "./Wifi";
 import Time from "./Time";
 
-const margin = 120;
+const marginForWideMonitor = 120;
 
-export function Bar() {
-  // TODO: calc margin based on Monitor width - laptop and lower should be full width
+export function Bar(monitor: Gdk.Monitor) {
+  const isWide = monitor.widthMm > 350;
   return (
     <window
       name="bar"
       application={App}
-      monitor={0}
+      gdkmonitor={monitor}
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       anchor={
         Astal.WindowAnchor.TOP |
         Astal.WindowAnchor.LEFT |
         Astal.WindowAnchor.RIGHT
       }
-      marginLeft={margin}
-      marginRight={margin}
+      marginLeft={isWide ? marginForWideMonitor : 0}
+      marginRight={isWide ? marginForWideMonitor : 0}
     >
       <centerbox>
         <box halign={Gtk.Align.START}>
@@ -29,7 +29,7 @@ export function Bar() {
             <icon icon="nix" />
           </button>
           <Separator />
-          <button>Title</button>
+          <button>{monitor.widthMm}</button>
         </box>
         <box>
           <Workspaces />

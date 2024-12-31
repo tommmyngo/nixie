@@ -3,7 +3,6 @@ import { bind, Variable } from "astal";
 import AstalNetwork from "gi://AstalNetwork";
 
 function Wifi() {
-  const { wifi } = AstalNetwork.get_default();
   return <button>{getNetworkIconBinding()}</button>;
 }
 

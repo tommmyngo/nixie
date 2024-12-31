@@ -21,6 +21,6 @@ App.start({
     response("Okay");
   },
   main() {
-    Bar();
+    App.get_monitors().map(Bar);
   },
 });

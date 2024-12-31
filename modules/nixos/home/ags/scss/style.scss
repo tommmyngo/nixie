@@ -24,7 +24,7 @@ $spacing-12: 3rem;
 $spacing-14: 3.5rem;
 $spacing-16: 4rem;
 
-$fontSize: 36px;
+$fontSize: 24px;
 
 $bg: #1c1e26;
 $fg: #fadad1;
@@ -47,10 +47,10 @@ window#bar {
   background-color: gtkalpha(color.scale($bg, $lightness: 3%), 0.9);
   color: $fg;
   // background-color: transparent;
-  border-bottom-right-radius: $spacing-6;
-  border-bottom-left-radius: $spacing-6;
+  border-bottom-right-radius: $spacing-4;
+  border-bottom-left-radius: $spacing-4;
   centerbox {
-    padding: $spacing-1 $spacing-4 $spacing-2-5;
+    padding: $spacing-1 $spacing-4 $spacing-1-5;
   }
 }
 
