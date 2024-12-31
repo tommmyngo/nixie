@@ -4,11 +4,18 @@ import { Separator } from "./UI";
 import Workspaces from "./Workspaces";
 import Wifi from "./Wifi";
 import Time from "./Time";
+import AstalHyprland from "gi://AstalHyprland";
+import { bind } from "astal";
 
 const marginForWideMonitor = 120;
 
 export function Bar(monitor: Gdk.Monitor) {
+  const hypr = AstalHyprland.get_default();
   const isWide = monitor.widthMm > 350;
+  const focusedTitle = bind(hypr, "focusedClient").as((client) =>
+    client ? client.class : ""
+  );
+
   return (
     <window
       name="bar"
@@ -29,7 +36,7 @@ export function Bar(monitor: Gdk.Monitor) {
             <icon icon="nix" />
           </button>
           <Separator />
-          <button>{monitor.widthMm}</button>
+          <button>{focusedTitle}</button>
         </box>
         <box>
           <Workspaces />
