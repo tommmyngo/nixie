@@ -7,13 +7,18 @@ import Time from "./Time";
 import AstalHyprland from "gi://AstalHyprland";
 import { bind } from "astal";
 
-const marginForWideMonitor = 120;
-
 export function Bar(monitor: Gdk.Monitor) {
   const hypr = AstalHyprland.get_default();
   const isWide = monitor.widthMm > 350;
+  const marginForWideMonitor = 120;
   const focusedTitle = bind(hypr, "focusedClient").as((client) =>
-    client ? client.class : ""
+    client ? (
+      <button>
+        {client.initialTitle.replace("Untitled - ", "").replace("-", " ")}
+      </button>
+    ) : (
+      ""
+    )
   );
 
   return (
@@ -36,7 +41,7 @@ export function Bar(monitor: Gdk.Monitor) {
             <icon icon="nix" />
           </button>
           <Separator />
-          <button>{focusedTitle}</button>
+          {focusedTitle}
         </box>
         <box>
           <Workspaces />
