@@ -6,19 +6,14 @@ import Wifi from "./Wifi";
 import Time from "./Time";
 import AstalHyprland from "gi://AstalHyprland";
 import { bind } from "astal";
+import { formatClientTitle } from "./utils";
 
 export function Bar(monitor: Gdk.Monitor) {
   const hypr = AstalHyprland.get_default();
   const isWide = monitor.widthMm > 350;
   const marginForWideMonitor = 120;
   const focusedTitle = bind(hypr, "focusedClient").as((client) =>
-    client ? (
-      <button>
-        {client.initialTitle.replace("Untitled - ", "").replace("-", " ")}
-      </button>
-    ) : (
-      ""
-    )
+    client ? <button>{formatClientTitle(client.initialTitle)}</button> : ""
   );
 
   return (
