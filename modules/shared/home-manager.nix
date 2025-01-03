@@ -1,11 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
+{pkgs, ...}: let
 in {
   imports = [
-    inputs.ghostty.homeModules.default
     ./home
   ];
   home = {

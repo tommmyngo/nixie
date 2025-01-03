@@ -8,7 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ghostty.url = "github:clo4/ghostty-hm-module";
     #MacOS Flakes
     darwin = {
       url = "github:LnL7/nix-darwin/master";
