@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty.url = "github:clo4/ghostty-hm-module";
     #MacOS Flakes
     darwin = {
       url = "github:LnL7/nix-darwin/master";
@@ -66,8 +67,7 @@
     disko,
     stylix,
     hyprland,
-    spicetify-nix,
-    ags,
+    ...
   } @ inputs: let
     user = "nommy";
     linuxSystems = ["x86_64-linux" "aarch64-linux"];

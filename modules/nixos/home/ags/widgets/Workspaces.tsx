@@ -24,7 +24,7 @@ function Workspaces() {
             const Icon = bind(
               Variable.derive([isActive, hasWindows], (active, hasWindows) => {
                 if (active) {
-                  return <icon icon="diamond_enabled" />;
+                  return <icon icon="diamond_active" />;
                 } else if (hasWindows) {
                   return <icon className="enabled" icon="diamond_filled" />;
                 } else {

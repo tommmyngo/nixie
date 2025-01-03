@@ -44,9 +44,8 @@ $accent: #6f6f70;
 }
 
 window#bar {
-  background-color: gtkalpha(color.scale($bg, $lightness: 3%), 0.9);
+  background-color: gtkalpha(color.scale($bg, $lightness: 0%), 0.5);
   color: $fg;
-  // background-color: transparent;
   border-bottom-right-radius: $spacing-4;
   border-bottom-left-radius: $spacing-4;
   centerbox {
