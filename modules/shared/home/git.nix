@@ -5,7 +5,6 @@ in {
   programs = {
     git = {
       enable = true;
-      ignores = ["*.swp"];
       userName = name;
       userEmail = email;
       lfs = {
@@ -15,7 +14,6 @@ in {
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
         pull.rebase = true;
-        rebase.autoStash = true;
       };
     };
   };
