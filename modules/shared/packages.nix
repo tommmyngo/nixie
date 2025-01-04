@@ -15,4 +15,6 @@ with pkgs; [
   #Fun
   cbonsai
   snowmachine
+
+  vscode
 ]
