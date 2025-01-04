@@ -25,4 +25,7 @@
     noto-fonts-emoji
     geist-font
   ];
+  environment.variables = {
+    EDITOR = "code";
+  };
 }
