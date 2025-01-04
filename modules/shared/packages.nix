@@ -11,10 +11,10 @@ with pkgs; [
   zig
   #Apps
   vesktop
+  google-chrome
+  vscode
 
   #Fun
   cbonsai
   snowmachine
-
-  vscode
 ]

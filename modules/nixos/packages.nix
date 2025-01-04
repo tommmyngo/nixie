@@ -7,7 +7,6 @@ in
     dart-sass
     rofimoji
     swww
-    google-chrome
     gammastep
     librewolf-wayland
   ]

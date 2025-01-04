@@ -8,7 +8,6 @@
   homebrew = {
     enable = true;
     casks = [
-      "google-chrome"
       "raycast"
     ];
 
