@@ -3,6 +3,7 @@
     ./fastfetch.nix
     ./git.nix
     ./nvim
+    ./spicetify.nix
     ./starship.nix
     ./wezterm.nix
     ./yazi.nix
