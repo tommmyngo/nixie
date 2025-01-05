@@ -27,5 +27,6 @@
   ];
   environment.variables = {
     EDITOR = "code";
+    NVIM_APPNAME = "lazyvim";
   };
 }

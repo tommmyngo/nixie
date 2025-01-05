@@ -6,9 +6,9 @@
     vimAlias = true;
   };
   home.file = {
-    "./.config/nvim/" = {
-      # enable = false;
-      source = ./lazy;
+    "./.config/lazyvim/" = {
+      enable = false;
+      source = ./lazyvim;
       recursive = true;
     };
   };

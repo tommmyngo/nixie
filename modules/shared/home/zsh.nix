@@ -24,6 +24,9 @@
         ls = "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions";
         cd = "z";
         clc = "clear";
+        yeet = "rm -rf";
+        vi = "nvim";
+        vim = "nvim";
         ##NODE##
         pn = "pnpm";
         ##GIT##
