@@ -51,6 +51,7 @@
         cmd-6 = "workspace 6";
         cmd-7 = "workspace 7";
         cmd-8 = "workspace 8";
+        cmd-9 = "workspace 9";
         cmd-h = "workspace prev --wrap-around";
         cmd-l = "workspace next --wrap-around";
         cmd-shift-1 = "move-node-to-workspace 1";
@@ -61,6 +62,7 @@
         cmd-shift-6 = "move-node-to-workspace 6";
         cmd-shift-7 = "move-node-to-workspace 7";
         cmd-shift-8 = "move-node-to-workspace 8";
+        cmd-shift-9 = "move-node-to-workspace 9";
         cmd-shift-h = "move-node-to-workspace prev --wrap-around";
         cmd-shift-l = "move-node-to-workspace next --wrap-around";
 
