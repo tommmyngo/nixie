@@ -9,6 +9,10 @@
     enable = true;
     casks = [
       "raycast"
+      "librewolf"
+    ];
+    brews = [
+      "bitwarden-cli"
     ];
 
     # These app IDs are from using the mas CLI app

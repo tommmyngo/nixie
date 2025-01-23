@@ -13,6 +13,7 @@ with pkgs; [
   vesktop
   google-chrome
   vscode
+  obsidian
 
   #Fun
   cbonsai
