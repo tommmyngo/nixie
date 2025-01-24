@@ -13,7 +13,7 @@ in {
     ../../modules/shared
   ];
 
-  time.timeZone = "America/Chicago";
+  time.timeZone = "America/Denver";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -75,9 +75,17 @@ in {
       pulse.enable = true;
       jack.enable = true;
     };
+
+    blueman = {
+      enable = true;
+    };
   };
   hardware = {
     pulseaudio.enable = false;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
 
   users.users = {
