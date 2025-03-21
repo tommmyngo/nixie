@@ -10,6 +10,7 @@
     casks = [
       "raycast"
       "librewolf"
+      "balenaetcher"
     ];
     brews = [
       "bitwarden-cli"
