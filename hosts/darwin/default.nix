@@ -14,11 +14,9 @@ in {
     shell = pkgs.zsh;
   };
 
-  services.nix-daemon.enable = true;
-
   nix = {
+    enable = true;
     gc = {
-      user = "root";
       interval = {
         Weekday = 0;
         Hour = 2;
